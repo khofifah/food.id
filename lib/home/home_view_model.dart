@@ -10,7 +10,9 @@ abstract class HomeViewModel extends State<Home> {
 
   getBanner() async {
     try {
-      var response = await Dio().get('https://food.mockable.io/v1/banner');
+      var response = await Dio().get(
+        'https://food.mockable.io/v1/banner',
+      );
       List listBanner = response.data['data'];
       listBanner.forEach((e) {
         if (!mounted) return;
